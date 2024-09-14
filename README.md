@@ -1,1 +1,1 @@
-Kutsás feladat függvény ismétlés, osztályok készítése
+Kutyás feladat függvény ismétlés, osztályok készítése

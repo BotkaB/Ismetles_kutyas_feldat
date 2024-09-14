@@ -5,8 +5,9 @@ export default class Kartya {
         this.#kutya = kutya;
         this.szuloElem=szuloElem;
        
-        this.gombElem=$(".kivalaszt:last")
+      
         this.#egyKutyaKiiras();
+        this.gombElem=$(".kivalaszt:last")
         console.log(this.gombElem); 
         this.#esemenyKezelo()
     }
@@ -17,6 +18,10 @@ export default class Kartya {
 this.gombElem.on("click",()=>{
    //az az elem, amelyik kiváltotta az eseményt
    console.log(this); 
+   //létrehozunk egy saját eseményt, ami akkor váltódik ki mikor a gombra kattintunk 
+
+   const e=new CustomEvent("kivalaszt",{detail:this.#kutya})
+   window.dispatchEvent(e)
 });
 }
     #egyKutyaKiiras() {
